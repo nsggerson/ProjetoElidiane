@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lopes de Oliveira Advocacia</title>
+  <meta name="description" content="Lopes de Oliveira Advocacia - Defesa Criminal Estratégica" />
+
+  <style>
+    :root{
+      --navy: #0b2545; /* Azul marinho */
+      --charcoal: #2b2b2b; /* Cinza chumbo */
+      --muted: #6b7280;
+      --white: #ffffff;
+      --gold: #b9913d; /* Dourado */
+      --silver: #bfbfbf; /* Prata */
+      --max-width: 1100px;
+      --radius: 12px;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--white),#f7f8fa);
+      color:var(--charcoal);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Header */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(11,37,69,0.06);
+      z-index:999;
+    }
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:16px;font-weight:700;color:var(--navy);
+      font-size:18px;letter-spacing:0.3px
+    }
+    .brand .name{font-size:18px}
+    .nav{display:flex;gap:20px;align-items:center}
+    .nav a{color:var(--charcoal);text-decoration:none;font-weight:600}
+    .cta-wa{background:var(--gold);color:var(--white);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    .photo{
+      width:64px;height:64px;border-radius:50%;overflow:hidden;border:3px solid rgba(11,37,69,0.08);
+    }
+    .photo img{width:100%;height:100%;object-fit:cover}
+
+    main{padding-top:100px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:center;padding:64px 0}
+    .hero .kicker{color:var(--muted);font-weight:600}
+    .hero h1{font-size:34px;margin:10px 0;color:var(--navy);line-height:1.12}
+    .hero p.lead{font-size:18px;color:var(--charcoal);max-width:720px}
+    .hero .actions{margin-top:22px;display:flex;gap:14px;align-items:center}
+    .btn-primary{background:var(--gold);color:var(--navy);padding:12px 18px;border-radius:10px;font-weight:800;text-decoration:none}
+    .btn-outline{border:1px solid rgba(11,37,69,0.08);padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--navy);font-weight:700}
+
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:0 6px 18px rgba(11,37,69,0.06);padding:22px}
+    .card .name{font-weight:800;color:var(--navy);margin-bottom:6px}
+    .card .role{color:var(--muted);font-size:14px}
+
+    /* Sections */
+    section{padding:48px 0}
+    h2.section-title{font-size:22px;color:var(--navy);margin:0 0 12px}
+    p.lead-muted{color:var(--muted);max-width:820px}
+
+    .grid{display:grid;gap:20px}
+    .areas{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+    .areas .item{background:linear-gradient(180deg,#fff,#fbfbfd);padding:18px;border-radius:10px;border:1px solid rgba(11,37,69,0.04)}
+    .item h4{margin:0 0 6px;color:var(--navy)}
+    .item p{margin:0;color:var(--muted);font-size:14px}
+
+    .values{display:flex;flex-direction:column;gap:12px}
+    .values .val{display:flex;gap:12px;align-items:flex-start}
+    .values .val strong{display:block;color:var(--navy)}
+
+    /* Contact form */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid rgba(11,37,69,0.08);font-size:15px}
+    textarea{min-height:140px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+    .contact-info{display:flex;flex-direction:column;gap:10px}
+
+    footer{padding:24px 0;border-top:1px solid rgba(11,37,69,0.06);background:transparent}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:10px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .contact-grid{grid-template-columns:1fr}
+      .topbar{gap:10px}
+      .nav{display:none}
+    }
+
+    /* Accessibility / focus */
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(185,145,61,0.18);outline-offset:2px}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div>
+          <div style="font-size:12px;color:var(--muted);font-weight:700">AJ LOPES ADVOCACIA E CONSULTORIA JURÍDICA</div>
+          <div class="name">Lopes de oliva<span style="text-transform:lowercase">ira</span> advocacia</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas</a>
+        <a href="#valores">Diferenciais</a>
+        <a href="#contato">Contato</a>
+        <a class="cta-wa" href="https://wa.me/5511964287306" target="_blank" rel="noopener">FALE NO WHATSAPP</a>
+      </nav>
+
+      <div class="photo" style="margin-left:16px">
+        <!-- Substitua src pela foto profissional do Dr. Altier -->
+        <img src="https://via.placeholder.com/300x300.png?text=Dr.+Altier" alt="Foto do Dr. Altier"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div>
+        <div class="kicker">Especialista em Direito Criminal</div>
+        <h1>Especialista em Direito Criminal e Processo Penal: Buscando Suas Garantias Fundamentais</h1>
+        <p class="lead">Defesa Criminal Estratégica, Focada e Ágil para Evitar Erros Irreparáveis. Atuação com seriedade, sigilo e compromisso com a preservação de direitos constitucionais.</p>
+
+        <div class="actions">
+          <a class="btn-primary" href="https://wa.me/5511964287306?text=Ol%C3%A1%20Dr.%20Altier%2C%20gostaria%20de%20um%20atendimento." target="_blank" rel="noopener">FALE CONOSCO AGORA MESMO</a>
+          <a class="btn-outline" href="#contato">Solicitar Contato</a>
+        </div>
+
+        <div style="margin-top:26px;display:flex;gap:14px;align-items:center">
+          <div class="card" style="display:flex;gap:12px;align-items:center;max-width:520px">
+            <div style="width:56px;height:56px;border-radius:10px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--navy)">A</div>
+            <div>
+              <div class="name">Dr. Altier</div>
+              <div class="role">Especialista em Direito Criminal e Processo Penal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+            <div style="width:100px;height:100px;border-radius:8px;overflow:hidden">
+              <img src="https://via.placeholder.com/400x400.png?text=Dr.+Altier" alt="Dr Altier" style="width:100%;height:100%;object-fit:cover"/>
+            </div>
+            <div style="text-align:center">
+              <div style="font-weight:800;color:var(--navy)">Dr. Altier</div>
+              <div style="font-size:13px;color:var(--muted)">Defesa Criminal • Processo Penal</div>
+            </div>
+            <a class="btn-primary" href="https://wa.me/5511964287306?text=Ol%C3%A1%20Dr.%20Altier%2C%20gostaria%20de%20um%20atendimento." target="_blank" rel="noopener" style="width:100%">Agende Atendimento</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+      <h2 class="section-title">Dr. Altier: Sua Defesa de Confiança</h2>
+      <p class="lead-muted">Dr. Altier: especialista em direito criminal e processo penal, vai buscar suas garantias fundamentais perante a justiça democrática de direito.</p>
+
+      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="card">
+          <p style="margin-top:0">Advogar na área criminal é compromisso incansável em buscar, dentro do poder judiciário, as prerrogativas das normas penais e constitucionais, com o máximo de zelo e carinho em cada etapa do processo.</p>
+        </div>
+        <div class="card">
+          <p style="margin-top:0"><em>"Uma sociedade pluralista só é digna quando exercemos nossa liberdade prevista em lei"</em></p>
+          <p style="margin-top:8px;margin-bottom:0"><em>"O direito penal é a última ratio: o indivíduo só será privado de sua liberdade quando se esgotarem todas as esferas administrativas"</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Áreas de Atuação -->
+    <section id="areas">
+      <h2 class="section-title">O que fazemos</h2>
+      <p class="lead-muted">Atuação prática e estratégica nas principais frentes do Direito Criminal.</p>
+
+      <div class="grid areas" style="margin-top:18px">
+        <div class="item"><h4>Prisão em Flagrante e Audiência de Custódia</h4><p>Atuação imediata para garantir direitos desde a primeira fase.</p></div>
+        <div class="item"><h4>Defesas Processuais Criminais e Defesa Prévia</h4><p>Elaboração de defesas técnicas e estratégicas em todas as fases do processo.</p></div>
+        <div class="item"><h4>Acompanhamento desde o Inquérito Policial</h4><p>Assessoria completa desde o início das investigações.</p></div>
+        <div class="item"><h4>Habeas Corpus</h4><p>Medidas urgentes para preservação da liberdade.</p></div>
+        <div class="item"><h4>Violências Domésticas</h4><p>Atuação especializada e sensível a casos envolvendo violência doméstica.</p></div>
+        <div class="item"><h4>Falsas acusações</h4><p>Defesa técnica contra imputações indevidas.</p></div>
+        <div class="item"><h4>Recursos aos Tribunais Superiores</h4><p>Preparação de recursos e acompanhamento em instâncias superiores.</p></div>
+        <div class="item"><h4>Demais Medidas de Urgência</h4><p>Atendimento rápido para demandas emergenciais.</p></div>
+      </div>
+    </section>
+
+    <!-- Valores e Diferenciais -->
+    <section id="valores">
+      <h2 class="section-title">Nossos Diferenciais: Seriedade e Compromisso</h2>
+      <div class="values" style="margin-top:12px">
+        <div class="val"><div style="width:8px;height:8px;border-radius:4px;background:var(--gold);margin-top:6px"></div><div><strong>Atendimento rápido e humanizado.</strong><span class="small"> Atendimento personalizado e empático desde o primeiro contato.</span></div></div>
+        <div class="val"><div style="width:8px;height:8px;border-radius:4px;background:var(--gold);margin-top:6px"></div><div><strong>Responsabilidade e confidencialidade total.</strong><span class="small"> Sigilo absoluto em todos os atendimentos.</span></div></div>
+        <div class="val"><div style="width:8px;height:8px;border-radius:4px;background:var(--gold);margin-top:6px"></div><div><strong>Defesa de confiança para evitar erros irreparáveis.</strong><span class="small"> Planejamento jurídico estratégico em cada caso.</span></div></div>
+        <div class="val"><div style="width:8px;height:8px;border-radius:4px;background:var(--gold);margin-top:6px"></div><div><strong>Atendimento online e 24 horas.</strong><span class="small"> Comunicação direta por WhatsApp.</span></div></div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <h2 class="section-title">Fale Conosco</h2>
+      <p class="lead-muted">Atendimento 100% sigiloso e direto pelo WhatsApp ou formulário abaixo. Respondemos com brevidade.</p>
+
+      <div class="contact-grid" style="margin-top:18px">
+        <div>
+          <div class="card">
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+              <label class="small">Nome</label>
+              <input type="text" id="name" name="name" required />
+
+              <label class="small">E-mail</label>
+              <input type="email" id="email" name="email" required />
+
+              <label class="small">Telefone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(11) 9XXXX-XXXX" />
+
+              <label class="small">Assunto</label>
+              <select id="subject" name="subject">
+                <option>Dúvida</option>
+                <option>Solicitação de Serviço</option>
+                <option>Emergência / Urgência</option>
+              </select>
+
+              <label class="small">Mensagem</label>
+              <textarea id="message" name="message" required></textarea>
+
+              <div style="display:flex;gap:10px;margin-top:8px">
+                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                <a class="btn-outline" href="https://wa.me/5511995820913?text=Ol%C3%A1%20Dr.%20Altier%2C%20preciso%20de%20atendimento%20imediato." target="_blank">WhatsApp (Ligação Rápida)</a>
+              </div>
+
+              <p class="small" style="margin-top:8px">Ao enviar, você concorda com nossa <a href="#" style="color:var(--navy)">Política de Privacidade</a>.</p>
+            </form>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card contact-info">
+            <div><strong>Atendimento 100% sigiloso e direto pelo WhatsApp</strong></div>
+            <div class="small">Tel/WhatsApp: <a href="tel:+5511964287306">(11) 96428-7306</a> • <a href="tel:+55119995820913">(11) 99582-0913</a></div>
+            <div class="small">E-mail: <a href="mailto:Lopesdeoliveiraadvocacia42@gmail.com">Lopesdeoliveiraadvocacia42@gmail.com</a></div>
+            <div class="small">Localização: São Paulo - SP</div>
+
+            <hr style="border:none;border-top:1px solid rgba(11,37,69,0.06);margin:6px 0">
+            <div style="display:flex;gap:8px;align-items:center">
+              <a class="btn-outline" href="https://wa.me/5511964287306?text=Ol%C3%A1%20Dr.%20Altier%2C%20gostaria%20de%20um%20atendimento." target="_blank">Fale no WhatsApp</a>
+              <a class="btn-outline" href="mailto:Lopesdeoliveiraadvocacia42@gmail.com">Enviar por E-mail</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-grid">
+        <div style="color:var(--muted);font-size:14px">© <strong>Lopes de oliveira advocacia</strong> — Todos os direitos reservados.</div>
+        <div style="color:var(--muted);font-size:13px">Contato: <a href="mailto:Lopesdeoliveiraadvocacia42@gmail.com">Lopesdeoliveiraadvocacia42@gmail.com</a> • <a href="#">Política de Privacidade</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      // Construir mailto para abrir no cliente de e-mail do usuário com os dados preenchidos.
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const phone = encodeURIComponent(document.getElementById('phone').value.trim());
+      const subject = encodeURIComponent(document.getElementById('subject').value);
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+
+      const to = 'Lopesdeoliveiraadvocacia42@gmail.com';
+      const mailSubject = encodeURIComponent('Contato via site: ' + subject + ' — ' + name);
+      const body = encodeURIComponent(`Nome: ${decodeURIComponent(name)}\nE-mail: ${decodeURIComponent(email)}\nTelefone: ${decodeURIComponent(phone)}\nAssunto: ${decodeURIComponent(subject)}\n\nMensagem:\n${decodeURIComponent(message)}`);
+
+      // Monta o mailto com corpo
+      const mailto = `mailto:${to}?subject=${mailSubject}&body=${body}`;
+
+      // Abre o cliente de e-mail do usuário
+      window.location.href = mailto;
+      return false;
+    }
+  </script>
+</body>
+</html>

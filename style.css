@@ -1,0 +1,436 @@
+/* Definições Gerais */
+:root {
+    --color-primary-dark: #001f3f; /* Azul Marinho (Autoridade, Confiança) */
+    --color-secondary-dark: #343a40; /* Cinza Chumbo/Preto Suave (Seriedade, Sofisticação) */
+    --color-accent: #b8860b; /* Dourado Escuro (Prestígio, Destaque) */
+    --color-text-light: #f8f9fa; /* Branco Suave */
+    --color-text-dark: #212529; /* Preto para Texto */
+    --color-background-light: #ffffff; /* Fundo Branco */
+    --color-background-dark: #f8f9fa; /* Fundo Seção Escura (Cinza Claro) */
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+}
+
+/* ------------------- CABEÇALHO (HEADER) ------------------- */
+header {
+    background-color: var(--color-secondary-dark);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-img {
+    max-width: 180px; /* Ajuste o tamanho da logo */
+    height: auto;
+    filter: brightness(0) invert(1); /* Deixa a logo clara se for escura */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 400;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
+}
+
+.advogado-foto img {
+    width: 60px; /* Tamanho da foto no topo */
+    height: 60px;
+    border-radius: 50%; /* Foto redonda */
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------- SEÇÕES GERAIS ------------------- */
+main {
+    padding-top: 80px; /* Espaço para o cabeçalho fixo */
+}
+
+.content-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: var(--color-primary-dark);
+    margin-bottom: 40px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.text-block {
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.text-block p {
+    margin-bottom: 20px;
+}
+
+/* Seção Escura (Diferenciais/Valores) */
+.dark-section {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
+}
+
+.dark-section .section-title {
+    color: var(--color-text-light);
+    border-bottom-color: var(--color-accent);
+}
+
+/* ------------------- HERO (INICIAL) ------------------- */
+.hero {
+    background: url('hero_background.jpg') no-repeat center center/cover; /* Imagem de fundo opcional (ex: balança, tribunal) */
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 100px 20px;
+}
+
+/* Overlay escuro para melhorar a leitura do texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-text {
+    position: relative;
+    color: var(--color-text-light);
+    max-width: 800px;
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.sigilo {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-secondary-dark);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid var(--color-accent);
+}
+
+.cta-button:hover {
+    background-color: #ffd700; /* Dourado mais claro */
+    transform: translateY(-2px);
+}
+
+/* ------------------- ÁREAS DE ATUAÇÃO ------------------- */
+.areas-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.areas-grid ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    flex: 1;
+    min-width: 300px;
+}
+
+.areas-grid ul li {
+    background: var(--color-background-dark);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--color-primary-dark);
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.areas-grid .dica {
+    margin-top: 30px;
+    font-style: italic;
+    color: var(--color-secondary-dark);
+}
+
+/* ------------------- VALORES/DIFERENCIAIS ------------------- */
+.valores-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.valor-item {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.valor-item h3 {
+    color: var(--color-accent);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* ------------------- CONTATO ------------------- */
+.contato-content {
+    display: flex;
+    gap: 50px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.contato-info {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.contato-info h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 20px;
+}
+
+.contato-info p {
+    margin-bottom: 15px;
+}
+
+.contato-info a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+form {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--color-background-dark);
+    border-radius: 8px;
+}
+
+form h3 {
+    color: var(--color-secondary-dark);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-instruction {
+    text-align: center;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form .cta-button {
+    width: 100%;
+    text-align: center;
+}
+
+/* ------------------- FOOTER ------------------- */
+footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ------------------- WHATSAPP FLUTUANTE ------------------- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    z-index: 1000;
+    box-shadow: 2px 2px 3px #999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------- RESPONSIVIDADE ------------------- */
+@media (max-width: 900px) {
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .advogado-foto {
+        order: -1;
+        margin-bottom: 10px;
+        position: absolute; /* Mudar a posição para garantir que fique no topo direito */
+        top: 10px;
+        right: 20px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .areas-grid {
+        flex-direction: column;
+    }
+
+    .valores-grid {
+        flex-direction: column;
+    }
+
+    .contato-content {
+        flex-direction: column;
+    }
+
+    .contato-info {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .advogado-foto {
+        position: static;
+        margin: 10px auto;
+    }
+    header {
+        padding: 5px 0;
+    }
+    .header-content {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 5px 10px;
+    }
+    main {
+        padding-top: 200px; /* Ajuste para o header expandido em mobile */
+    }
+    .hero {
+        min-height: 40vh;
+    }
+    .hero-text h1 {
+        font-size: 1.6em;
+    }
+    .hero-text p {
+        font-size: 1.1em;
+    }
+}
